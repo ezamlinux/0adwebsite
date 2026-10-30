@@ -1,0 +1,25 @@
+# backend:
+#   name: github
+#   repo: ezamlinux/0adwebsite
+
+# see https://sveltiacms.app/en/docs/backends/test
+backend:
+  name: test-repo
+
+media_folder: static/images
+public_folder: /images
+collections:
+  - name: posts
+    label: Posts
+    folder: content/posts
+    path: '{{slug}}/index'
+    media_folder: ''
+    public_folder: ''
+    create: true
+    fields:
+      - { name: title, label: Title }
+      - { name: date, label: Date, widget: datetime }
+      - { name: draft, label: Draft, widget: boolean, default: true }
+      - { name: description, label: Description, required: false }
+      - { name: tags, label: Tags, widget: list, required: false }
+      - { name: body, label: Body, widget: markdown }
